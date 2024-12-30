@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Tondo';
+    src: url('./assets/fonts/Tondo_Light.ttf');
+  }
+  @font-face {
+    font-family: 'PP_Tondo_Signage';
+    src: url('./assets/fonts/PPTondoSignage_Regular.ttf');
+  }
+  @font-face {
+    font-family: 'Tondo_W01_Signage';
+    src: url('./assets/fonts/Tondo_W01_Signage.ttf');
+  }
+
+  html {
+    @apply font-Tondo;
+  }
+}

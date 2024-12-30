@@ -1,0 +1,20 @@
+{
+  "gift_customization": "Gift Customisation",
+  "gifts": "Gifts",
+  "gifts_desc": "Choose 1 of the following:",
+  "patches": "Patches",
+  "patches_desc" : "Choose up to 3 alphabets, and up to 2 characters or quotes:",
+  "colorful_alphabets": "Colorful Alphabets",
+  "monochrome_alphabets": "Monochrome Alphabets",
+  "characters": "Characters",
+  "quotes": "Quotes",
+  "notification_bar_text": "You can only choose to 3x alphabets, and up to 2 characters or quotes.",
+  "discard_change": "Do you want to discard all the change?",
+  "cancel": "CANCEL",
+  "discard": "DISCARD",
+  "save_image": "Save Image",
+  "reset": "Reset",
+  "download_image": "Download Your Image",
+  "friendly_reminders": "Friendly reminders:",
+  "gift_image_desc": "Our gifts are made-to-order. Please line up at the booth in Three Pacific Place, redeem your gift in the Pacific Place Offices app, and show your gift image to our staff to confirm your preferred design."
+}
