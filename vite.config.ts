@@ -27,8 +27,6 @@ export default defineConfig({
     fontmin(),
     importToCDN({
       modules: [
-        'react',
-        'react-dom',
         {
           name: 'clsx',
           var: 'clsx',
