@@ -36,6 +36,7 @@ export const BagSelectionItem = ({
       </h2>
       <p className="mt-3 text-center">
         <Trans
+          t={t}
           i18nKey={desc}
           components={{ bold: <strong />, underline: <u /> }}
         />
