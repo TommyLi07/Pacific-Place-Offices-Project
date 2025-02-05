@@ -15,9 +15,8 @@ export default {
         yellow_metal: "#715e39",
         alice_blue: "#f6f7f9",
       },
-      maxHeight: {
-        420: "420px",
-        660: "660px",
+      screens: {
+        lg: "1180px",
       },
     },
   },

@@ -12,7 +12,7 @@ export default defineConfig({
           [
             "babel-plugin-react-compiler",
             {
-              target: "19",
+              target: "18",
             },
           ],
         ],
