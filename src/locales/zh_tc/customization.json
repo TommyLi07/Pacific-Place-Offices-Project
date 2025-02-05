@@ -1,10 +1,12 @@
 {
   "gift_customization": "禮物訂製",
-  "bags": "包包",
-  "alphabet_big": "字母 (大寫)",
-  "colorful_alphabets ": "Colorful Alphabets",
-  "alphabet_small": "字母 (小寫)",
-  "emojis": "表情符號",
+  "gifts": "包包",
+  "gifts_desc": "選擇以下其中一個：",
+  "patches": "补丁",
+  "patches_desc": "最多选择 3 个字母，以及最多 2 个字符或引号：",
+  "colorful_alphabets": "彩色字母",
+  "monochrome_alphabets": "单色字母",
+  "characters": "表情符號",
   "quotes": "引用",
   "notification_bar_text": "您只能選擇 3 個字母以及最多 2 個表情符號或引用。",
   "discard_change": "您想放棄所有更改嗎？",
@@ -13,6 +15,10 @@
   "save_image": "保存圖片",
   "reset": "重置",
   "download_image": "下載您的相片",
-  "friendly_reminders": "Friendly reminders:",
-  "gift_image_desc": "我們的禮物是按訂單製作的。請在太古廣場三座攤位排隊，在太古廣場辦公室應用程式中兌換禮品，並向我們的工作人員出示您的圖片以確認您喜歡的設計。"
+  "image_desc": "點選下面的影像，然後按住該影像約 3 秒鐘，然後選擇「儲存到照片」。",
+  "friendly_reminders": "友情提醒：",
+  "reminder_one": "我們的禮物是按訂單製作的。請前往我們的快閃店，並向我們的員工出示此圖片以及太古廣場辦公室應用程式以進行兌換。",
+  "reminder_two": "<underline>每日配額</underline>先到先得，換完為止。",
+  "reminder_three": "每人最多可<underline>兌換一次</underline>售完為止。",
+  "reminder_four": "其他條款和條件適用。"
 }

@@ -15,6 +15,10 @@
   "save_image": "Save Image",
   "reset": "Reset",
   "download_image": "Download Your Image",
+  "image_desc": "Tap the image below, then hold the image for approximately 3 seconds, and select 'Save to Photos'.",
   "friendly_reminders": "Friendly reminders:",
-  "gift_image_desc": "Our gifts are made-to-order. Please line up at the booth in Three Pacific Place, redeem your gift in the Pacific Place Offices app, and show your gift image to our staff to confirm your preferred design."
+  "reminder_one": "Our gifts are made-to-order. Please visit our pop-up store and present this image along with Pacific Place Offices app to our staff for redemption.",
+  "reminder_two": "<underline>Daily quota</underline> applies on a first- come, first-served basis while stock lasts.",
+  "reminder_three": "Each person is entitled to a <underline>maximum of ONE redemption</underline> while stocks last.",
+  "reminder_four": "Other terms and conditions apply."
 }

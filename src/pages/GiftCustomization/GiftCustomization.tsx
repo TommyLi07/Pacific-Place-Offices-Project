@@ -17,7 +17,7 @@ import clsx from 'clsx';
 import { toPng, toSvg } from 'html-to-image';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import Lottie from 'react-lottie-player';
 import { ScrollRestoration, useLocation, useNavigate } from 'react-router';
 
@@ -509,10 +509,7 @@ export const GiftCustomization = () => {
             <CloseIcon onClick={handleCloseOrderSummary} />
           </button>
 
-          <p className='mt-1 bg-barley_corn px-3 py-2 text-sm'>
-            Tap the image below, then hold the image for approximately 3 seconds, and select "Save
-            to Photos".
-          </p>
+          <p className='mt-1 bg-barley_corn px-3 py-2 text-sm'>{t('image_desc')}</p>
 
           {generatedImage && (
             <div
@@ -538,26 +535,21 @@ export const GiftCustomization = () => {
                   'text-sm': windowWidth! < 1180
                 })}
               >
+                <li>{t('reminder_one')}</li>
                 <li>
-                  Our gifts are made-to-order. Please visit our pop-up store and present this image
-                  along with Pacific Place Offices app to our staff for redemption.
+                  <Trans t={t} i18nKey='reminder_two' components={{ underline: <u /> }} />
                 </li>
                 <li>
-                  <span className='font-bold underline'>Daily quota</span> applies on a first- come,
-                  first-served basis while stock lasts.
+                  <Trans t={t} i18nKey='reminder_three' components={{ underline: <u /> }} />
                 </li>
-                <li>
-                  Each person is entitled to a{' '}
-                  <span className='font-bold underline'>maximum of ONE redemption</span> while
-                  stocks last.
-                </li>
-                <li>Other terms and conditions apply.</li>
+                <li>{t('reminder_four')}</li>
               </ol>
             </div>
 
             <button
               className='rounded-2xl border-2 border-gray-300 bg-zinc-50 p-2 shadow-md shadow-slate-300 transition-all duration-150 active:scale-95 active:opacity-75'
               onClick={handleDownloadImage}
+              title='Download image'
             >
               <DownloadBlackIcon />
             </button>

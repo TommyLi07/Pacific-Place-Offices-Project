@@ -2,6 +2,7 @@ import { ItemTypes } from "@/types";
 import { useWindowSize } from "@uidotdev/usehooks";
 import clsx from "clsx";
 import { GiftCustomizationGridProps } from "./GiftCustomizationGrid.types";
+import { useTranslation } from 'react-i18next';
 
 export const GiftCustomizationGrid = ({
   title,
@@ -10,9 +11,10 @@ export const GiftCustomizationGrid = ({
   selectedIcons,
   handleClick,
 }: GiftCustomizationGridProps) => {
+  const { t } = useTranslation('customization');
   const { width: windowWidth } = useWindowSize();
 
-  const isGiftCategory = title === "Gifts";
+  const isGiftCategory = title === "Gifts" || title === "包包";
 
   return (
     <div
@@ -21,7 +23,7 @@ export const GiftCustomizationGrid = ({
       })}
     >
       {!isGiftCategory && (
-        <h2 className="font-Tondo_W01_Signage text-base">{title}</h2>
+        <h2 className="font-Tondo_W01_Signage text-base">{t(title)}</h2>
       )}
       <div
         className={clsx("mt-2 grid justify-items-center", {
