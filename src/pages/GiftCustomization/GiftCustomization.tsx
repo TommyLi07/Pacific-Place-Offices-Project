@@ -15,7 +15,7 @@ import { IconInfo, ItemTypes } from '@/types';
 import { useOrientation, useWindowSize } from '@uidotdev/usehooks';
 import clsx from 'clsx';
 import { toPng, toSvg } from 'html-to-image';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Draggable from 'react-draggable';
 import { Trans, useTranslation } from 'react-i18next';
 import Lottie from 'react-lottie-player';
@@ -45,88 +45,85 @@ export const GiftCustomization = () => {
   const leftSideScrollViewHeight =
     windowHeight! - 64 - (isShowNotificationHeader ? location.state.notificationHeaderHeight : 0);
 
-  const handleCloseNotificationHeader = useCallback(() => {
+  const handleCloseNotificationHeader = () => {
     setIsShowNotificationHeader(false);
-  }, []);
+  };
 
-  const handleCloseNotificationBar = useCallback(() => {
+  const handleCloseNotificationBar = () => {
     setIsShowNotificationBar(false);
-  }, []);
+  };
 
   /** back modal */
-  const handleBackButtonClick = useCallback(() => {
+  const handleBackButtonClick = () => {
     setIsBackModalOpen(true);
-  }, []);
+  };
 
-  const handleCancelButtonClick = useCallback(() => {
+  const handleCancelButtonClick = () => {
     setIsBackModalOpen(false);
-  }, []);
+  };
 
-  const handleDiscardButtonClick = useCallback(() => {
+  const handleDiscardButtonClick = () => {
     navigate('/');
     setIsBackModalOpen(false);
-  }, [navigate]);
+  };
 
-  const handleReset = useCallback(() => {
+  const handleReset = () => {
     setSelectedIcons([]);
-  }, []);
+  };
 
   /** order summary modal */
-  const handleCloseOrderSummary = useCallback(() => {
+  const handleCloseOrderSummary = () => {
     setIsOrderModalOpen(false);
-  }, []);
+  };
 
   // handle icon selection
-  const handleIconSelect = useCallback(
-    (iconInfo: IconInfo) => {
-      // handle bag selection
-      if (iconInfo.type === ItemTypes.GIFT) {
-        if (iconInfo.id === selectedBag.id) return;
+  const handleIconSelect = (iconInfo: IconInfo) => {
+    // handle bag selection
+    if (iconInfo.type === ItemTypes.GIFT) {
+      if (iconInfo.id === selectedBag.id) return;
 
-        setSelectedBag(iconInfo);
+      setSelectedBag(iconInfo);
 
-        return;
-      }
+      return;
+    }
 
-      // handle icon selection
-      // only allow 5 icons to be selected
-      if (selectedIcons.length === 5) {
-        setIsShowNotificationBar(true);
-        return;
-      }
+    // handle icon selection
+    // only allow 5 icons to be selected
+    if (selectedIcons.length === 5) {
+      setIsShowNotificationBar(true);
+      return;
+    }
 
-      const letterCount = selectedIcons.filter(
-        icon => icon.type === ItemTypes.COLORFUL_LETTER || icon.type === ItemTypes.MONOCHROME_LETTER
-      ).length;
-      const quoteCount = selectedIcons.filter(icon => icon.type === ItemTypes.QUOTE).length;
-      const emojiCount = selectedIcons.filter(icon => icon.type === ItemTypes.ChARACTER).length;
+    const letterCount = selectedIcons.filter(
+      icon => icon.type === ItemTypes.COLORFUL_LETTER || icon.type === ItemTypes.MONOCHROME_LETTER
+    ).length;
+    const quoteCount = selectedIcons.filter(icon => icon.type === ItemTypes.QUOTE).length;
+    const emojiCount = selectedIcons.filter(icon => icon.type === ItemTypes.ChARACTER).length;
 
-      // only allow 3 letters to be selected
-      if (
-        (iconInfo.type === ItemTypes.COLORFUL_LETTER ||
-          iconInfo.type === ItemTypes.MONOCHROME_LETTER) &&
-        letterCount === 3
-      ) {
-        setIsShowNotificationBar(true);
-        return;
-      }
+    // only allow 3 letters to be selected
+    if (
+      (iconInfo.type === ItemTypes.COLORFUL_LETTER ||
+        iconInfo.type === ItemTypes.MONOCHROME_LETTER) &&
+      letterCount === 3
+    ) {
+      setIsShowNotificationBar(true);
+      return;
+    }
 
-      // only allow 2 quotes or emojis to be selected
-      if (
-        (iconInfo.type === ItemTypes.ChARACTER || iconInfo.type === ItemTypes.QUOTE) &&
-        quoteCount + emojiCount >= 2
-      ) {
-        setIsShowNotificationBar(true);
-        return;
-      }
+    // only allow 2 quotes or emojis to be selected
+    if (
+      (iconInfo.type === ItemTypes.ChARACTER || iconInfo.type === ItemTypes.QUOTE) &&
+      quoteCount + emojiCount >= 2
+    ) {
+      setIsShowNotificationBar(true);
+      return;
+    }
 
-      setSelectedIcons(prevState => [...prevState, iconInfo]);
-    },
-    [selectedBag.id, selectedIcons]
-  );
+    setSelectedIcons(prevState => [...prevState, iconInfo]);
+  };
 
   // handle save image button click
-  const handleSaveImageButtonClick = useCallback(() => {
+  const handleSaveImageButtonClick = () => {
     const elementId = windowWidth! < 1180 ? 'exportAreaMobile' : 'exportAreaWeb';
     const element = document.getElementById(elementId);
 
@@ -142,10 +139,10 @@ export const GiftCustomization = () => {
           console.error('oops, something went wrong!', error);
         });
     }
-  }, [windowWidth]);
+  };
 
   /** order summary modal */
-  const handleShowImage = useCallback(() => {
+  const handleShowImage = () => {
     const elementId = windowWidth! < 1180 ? 'exportAreaMobile' : 'exportAreaWeb';
     const element = document.getElementById(elementId);
 
@@ -158,9 +155,9 @@ export const GiftCustomization = () => {
           console.log(err);
         });
     }
-  }, [navigate, windowWidth]);
+  };
 
-  const handleDownloadImage = useCallback(() => {
+  const handleDownloadImage = () => {
     const elementId = windowWidth! < 1180 ? 'exportAreaMobile' : 'exportAreaWeb';
     const element = document.getElementById(elementId);
 
@@ -176,7 +173,7 @@ export const GiftCustomization = () => {
           console.log(err);
         });
     }
-  }, [windowWidth]);
+  };
 
   // set setSelectedBag
   useEffect(() => {
