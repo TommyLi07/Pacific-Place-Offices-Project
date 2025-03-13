@@ -1,23 +1,23 @@
-import GiftCollection from "@/assets/icons/GiftCollection.svg?react";
-import LogoImg from "@/assets/images/Logo.png";
-import { BagSelectionItem, NotificationHeader } from "@/components";
-import { BagInfo, Languages } from "@/constants";
-import clsx from "clsx";
-import { useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { ScrollRestoration, useNavigate } from "react-router";
+import GiftCollection from '@/assets/icons/GiftCollection.svg?react';
+import LogoImg from '@/assets/images/Logo.png';
+import { BagSelectionItem, NotificationHeader } from '@/components';
+import { BagInfo, Languages } from '@/constants';
+import clsx from 'clsx';
+import { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { ScrollRestoration, useNavigate } from 'react-router';
 
 export function Landing() {
   const {
     t,
-    i18n: { language, changeLanguage },
-  } = useTranslation("landing");
+    i18n: { language, changeLanguage }
+  } = useTranslation('landing');
   const navigate = useNavigate();
 
   const notificationHeaderRef = useRef<HTMLDivElement>(null);
   const [isShowNotification, setIsShowNotification] = useState(true);
   const [notificationMessage] = useState(
-    "Electronic Bag have been sold out. Please stay tuned for our latest updates.",
+    'Electronic Bag have been sold out. Please stay tuned for our latest updates.'
   );
 
   const handleChangeLanguage = (lang: string) => {
@@ -31,20 +31,19 @@ export function Landing() {
   };
 
   const handleScrollToCustomize = () => {
-    document.getElementById("first-bag")?.scrollIntoView({
-      behavior: "smooth",
+    document.getElementById('first-bag')?.scrollIntoView({
+      behavior: 'smooth'
     });
   };
 
   const handleClickBagSelectionButton = (title: string) => {
     if (!notificationHeaderRef.current) return;
 
-    navigate("/customization", {
+    navigate('/customization', {
       state: {
         bag: title,
-        notificationHeaderHeight:
-          notificationHeaderRef.current.getBoundingClientRect().height,
-      },
+        notificationHeaderHeight: notificationHeaderRef.current.getBoundingClientRect().height
+      }
     });
   };
 
@@ -61,7 +60,7 @@ export function Landing() {
       )}
 
       <header className='flex items-center px-6 py-4 md:px-12'>
-        <img className='h-4' src={LogoImg} alt='logo' />
+        <img className='w-44 md:h-4 md:w-auto' src={LogoImg} alt='logo' />
         <div className='flex flex-1 items-center justify-end gap-8'>
           {Languages.map(({ code, label }) => (
             <button
