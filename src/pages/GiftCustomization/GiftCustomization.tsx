@@ -27,6 +27,7 @@ export const GiftCustomization = () => {
   const { t } = useTranslation('customization');
   const { width: windowWidth, height: windowHeight } = useWindowSize();
   const { type: OrientationType } = useOrientation();
+  const draggableRef = useRef(null);
 
   const [isShowNotificationHeader, setIsShowNotificationHeader] = useState(true);
   const [isShowNotificationBar, setIsShowNotificationBar] = useState(false);
@@ -142,7 +143,7 @@ export const GiftCustomization = () => {
   };
 
   /** order summary modal */
-  const handleShowImage = () => {
+  const handleShowImage = async () => {
     const elementId = windowWidth! < 1180 ? 'exportAreaMobile' : 'exportAreaWeb';
     const element = document.getElementById(elementId);
 
@@ -240,6 +241,7 @@ export const GiftCustomization = () => {
                     {selectedIcons.map((selectIcon, index) => (
                       <Draggable
                         key={`${selectIcon.id}-${index}`}
+                        nodeRef={draggableRef}
                         bounds={{
                           top: 0,
                           left: 0,
@@ -249,6 +251,7 @@ export const GiftCustomization = () => {
                       >
                         <div
                           id={`${selectIcon.id}-${index}`}
+                          ref={draggableRef}
                           className={clsx(
                             `absolute h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 top-${selectIcon.defaultY} left-${selectIcon.defaultX}`,
                             {
@@ -405,6 +408,7 @@ export const GiftCustomization = () => {
                   {/* draggable icons */}
                   {selectedIcons.map((selectIcon, index) => (
                     <Draggable
+                      nodeRef={draggableRef}
                       key={`${selectIcon.id}-${index}`}
                       bounds={{
                         top: 0,
@@ -414,6 +418,7 @@ export const GiftCustomization = () => {
                       }}
                     >
                       <div
+                        ref={draggableRef}
                         id={`${selectIcon.id}-${index}`}
                         className={clsx(
                           `absolute h-24 w-24 top-${selectIcon.defaultY} left-${selectIcon.defaultX}`,
